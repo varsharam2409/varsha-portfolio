@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varsha R | Mechanical Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #111111;
+            --card-bg: #1a1a1a;
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .cta-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .primary-btn, .secondary-btn {
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .primary-btn {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .secondary-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+            opacity: 0.2;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-image-placeholder {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--card-bg), var(--secondary-bg));
+            border: 4px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            z-index: 1;
+            margin: 25px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: var(--card-bg);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent-color);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: var(--secondary-bg);
+            padding: 5rem 2rem;
+        }
+
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent-color), transparent);
+        }
+
+        .experience-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid var(--primary-bg);
+        }
+
+        .experience-year {
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .achievement-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .achievement-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--secondary-bg);
+            padding: 5rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-bg);
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-about h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-about p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image-wrapper {
+                width: 300px;
+                height: 300px;
+            }
+
+            .hero-image-placeholder {
+                width: 250px;
+                height: 250px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">VARSHA R</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content fade-in-up">
+            <div class="hero-text">
+                <div class="badge">🎓 Available for Opportunities</div>
+                <h1>Hi, I'm <span>Varsha Ram</span></h1>
+                <p class="hero-subtitle">Mechanical Engineer & Innovator</p>
+                <p class="hero-description">
+                    Passionate Mechanical Engineering student specializing in CAD design, renewable energy systems, 
+                    and automation. Building sustainable solutions with focus on innovation and efficiency.
+                </p>
+                <div class="skills-grid">
+                    <div class="skill-tag">SolidWorks</div>
+                    <div class="skill-tag">CAD Design</div>
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">C Programming</div>
+                    <div class="skill-tag">Linux</div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contact" class="primary-btn">Contact Me</a>
+                    <a href="#projects" class="secondary-btn">View Projects</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-placeholder">👩‍🔧</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Mechanical Engineering Student</h3>
+                <p>
+                    I'm currently pursuing my Bachelor's degree in Mechanical Engineering at Vidya Vikas Institute Of Engineering And Technology, Mysore. 
+                    My passion lies in sustainable design, automation, and innovative mechanical solutions.
+                </p>
+                <p>
+                    With hands-on experience in CAD software, programming, and mechanical design, I've contributed to open-source 
+                    projects like Solve Space and developed innovative systems in renewable energy and automation.
+                </p>
+                <p>
+                    I'm actively seeking opportunities to apply my technical skills and creative problem-solving abilities to 
+                    real-world engineering challenges.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/varsha-ram" target="_blank" class="social-link" title="LinkedIn">💼</a>
+                    <a href="https://github.com/varsha-r" target="_blank" class="social-link" title="GitHub">💻</a>
+                    <a href="https://www.hackerrank.com/profile/varsha-r" target="_blank" class="social-link" title="HackerRank">🏆</a>
+                    <a href="https://www.behance.net/varsha-ram" target="_blank" class="social-link" title="Behance">🎨</a>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">7.45</div>
+                    <div class="stat-label">CGPA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1st</div>
+                    <div class="stat-label">Hackathon Winner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section style="background: var(--secondary-bg); padding: 5rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title"><span>Education</span></h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-year">2023 - Present</div>
+                    <div class="experience-title">Bachelor of Engineering - Mechanical Engineering</div>
+                    <div class="experience-company">Vidya Vikas Institute Of Engineering And Technology, Mysore</div>
+                    <div class="experience-description">CGPA: 7.45 | Specializing in CAD Design, Thermodynamics, and Manufacturing Processes</div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-year">2022 - 2023</div>
+                    <div class="experience-title">Pre-University (XII - State Board)</div>
+                    <div class="experience-company">St. Joseph PU College, Mysore</div>
+                    <div class="experience-description">Percentage: 70.5%</div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-year">2020 - 2021</div>
+                    <div class="experience-title">Secondary School (10th)</div>
+                    <div class="experience-company">Carmel English School, Mysore</div>
+                    <div class="experience-description">Percentage: 77.28%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Technical <span>Skills</span></h2>
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <h3>💻 Software & Programming</h3>
+                    <div class="skill-list">
+                        <div class="skill-tag">C Programming</div>
+                        <div class="skill-tag">Python Scripting</div>
+                        <div class="skill-tag">Linux</div>
+                        <div class="skill-tag">Cadence</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>🔧 Core Engineering Skills</h3>
+                    <div class="skill-list">
+                        <div class="skill-tag">Design Verification</div>
+                        <div class="skill-tag">Synthesis</div>
+                        <div class="skill-tag">Physical Design</div>
+                        <div class="skill-tag">CAD Design</div>
+                        <div class="skill-tag">SolidWorks</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>🎯 Soft Skills</h3>
+                    <div class="skill-list">
+                        <div class="skill-tag">Public Speaking</div>
+                        <div class="skill-tag">Problem Solving</div>
+                        <div class="skill-tag">Critical Thinking</div>
+                        <div class="skill-tag">Leadership</div>
+                        <div class="skill-tag">Creativity</div>
+                        <div class="skill-tag">Resilience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">☀️</div>
+                <div class="project-content">
+                    <h3 class="project-title">Smart Solar Water Heater</h3>
+                    <p class="project-description">
+                        Focused on renewable energy utilization, heat transfer efficiency, and sustainable mechanical design. 
+                        Implemented smart temperature control and energy optimization.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Renewable Energy</span>
+                        <span class="project-tag">Thermodynamics</span>
+                        <span class="project-tag">IoT</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🏭</div>
+                <div class="project-content">
+                    <h3 class="project-title">Automatic Bottle Filling System</h3>
+                    <p class="project-description">
+                        Designed and implemented an automated system using sensors and control mechanisms to achieve precise 
+                        liquid dispensing with improved efficiency and accuracy.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Automation</span>
+                        <span class="project-tag">Sensors</span>
+                        <span class="project-tag">Control Systems</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">📐</div>
+                <div class="project-content">
+                    <h3 class="project-title">Solve Space Contribution</h3>
+                    <p class="project-description">
+                        Contributed to Solve Space, an open-source parametric 2D/3D CAD software used for modeling, 
+                        assemblies, and mechanical design. Enhanced functionality and user experience.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">CAD</span>
+                        <span class="project-tag">Open Source</span>
+                        <span class="project-tag">3D Modeling</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🚗</div>
+                <div class="project-content">
+                    <h3 class="project-title">Four-Wheel Steering System</h3>
+                    <p class="project-description">
+                        Designed a Four-Wheel Steering System prototype to enhance vehicle maneuverability, stability, 
+                        and safety at varying speeds. Complete mechanical analysis and simulation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Automotive</span>
+                        <span class="project-tag">Kinematics</span>
+                        <span class="project-tag">Simulation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">💪</div>
+                <div class="project-content">
+                    <h3 class="project-title">Fital Website</h3>
+                    <p class="project-description">
+                        Integrated resources, expert tips, and wellness content to provide users with valuable insights 
+                        into fitness, nutrition, and overall well-being. Full-stack web development project.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Web Development</span>
+                        <span class="project-tag">UI/UX</span>
+                        <span class="project-tag">Content Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section style="background: var(--secondary-bg); padding: 5rem 2rem;" id="experience">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Experience & <span>Achievements</span></h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-year">2025</div>
+                    <div class="experience-title">Devum Developer Round Table</div>
+                    <div class="experience-company">Reactore, Bengaluru</div>
+                    <div class="experience-description">
+                        Selected to participate in Devum Developer Round Table hosted by Reactore, Bengaluru – a hands-on 
+                        knowledge-sharing forum for developers building scalable applications. Participated in hands-on 
+                        discussions focused on scalable software solutions and developer best practices. Engaged with industry 
+                        professionals on real-world challenges and gained insights into collaborative problem-solving.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-year">2025</div>
+                    <div class="experience-title">Internship Induction Session</div>
+                    <div class="experience-company">Unified Mentor</div>
+                    <div class="experience-description">
+                        Attended the official induction program conducted by Unified Mentor covering internship structure, 
+                        stipend policies, and program roadmap. Understood key expectations, deliverables, and professional 
+                        standards required for successful internship participation.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-year">2024</div>
+                    <div class="experience-title">🏆 1st Place - SPECTRA 2024 Hackathon</div>
+                    <div class="experience-company">Hindustan College, Mysuru</div>
+                    <div class="experience-description">
+                        Achieved 1st place in the Hackathon event at SPECTRA 2024, a National Level Inter-Collegiate Management, 
+                        IT, Aviation & Cultural Fest. Demonstrated exceptional problem-solving and innovation skills.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>
+                        I'm always open to discussing new projects, creative ideas, or opportunities to contribute to 
+                        innovative engineering solutions. Feel free to reach out!
+                    </p>
+                    <div class="contact-details">
+                        <a href="tel:+917337838948" class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <strong>Phone</strong><br>
+                                +91 7337838948
+                            </div>
+                        </a>
+                        <a href="mailto:varsharam2405@gmail.com" class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <strong>Email</strong><br>
+                                varsharam2405@gmail.com
+                            </div>
+                        </a>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>Location</strong><br>
+                                Mysore, Karnataka, India
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/varsha-ram" target="_blank" class="social-link" title="LinkedIn">💼</a>
+                        <a href="https://github.com/varsha-r" target="_blank" class="social-link" title="GitHub">💻</a>
+                        <a href="https://www.hackerrank.com/profile/varsha-r" target="_blank" class="social-link" title="HackerRank">🏆</a>
+                        <a href="https://www.behance.net/varsha-ram" target="_blank" class="social-link" title="Behance">🎨</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Varsha Ram</h3>
+                <p>
+                    Mechanical Engineering student focused on building innovative solutions with sustainable design and automation.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/varsha-ram" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://github.com/varsha-r" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.hackerrank.com/profile/varsha-r" target="_blank">HackerRank</a></li>
+                    <li><a href="https://www.behance.net/varsha-ram" target="_blank">Behance</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Varsha Ram. Designed with passion and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
